@@ -1,10 +1,11 @@
-const Profile = ()=>{
+import ProfileForm from "../Components/UserDetails/ProfileForm";
 
-    return(
-        <div>
-            <h1>Hello Expense</h1>
-        </div>
-    )
-}
+const Profile = () => {
+  return (
+    <>
+      <ProfileForm />
+    </>
+  );
+};
 
 export default Profile;

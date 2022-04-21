@@ -19,7 +19,6 @@ const Signup = () => {
     const enteredEmail = inputEmailRef.current.value;
     const enteredPassword = inputPasswordRef.current.value;
 
-    //Login
     if (isLogin) {
       if (
         inputPasswordRef.current.value.trim().length > 5 &&
@@ -56,9 +55,8 @@ const Signup = () => {
         } catch (err) {
           console("Loging Something went wrong!");
         }
-      }
+      } 
     }
-    //Signup
     else if (!isLogin) {
       if (
         inputPasswordRef.current.value === confirmPasswordRef.current.value &&
@@ -80,7 +78,8 @@ const Signup = () => {
                 "Content-Type": "application/json",
               },
             }
-          );
+            )
+
           if (response.ok) {
             console.log("User has successfully signed up.");
             inputEmailRef.current.value = "";
@@ -98,7 +97,7 @@ const Signup = () => {
       } else {
         alert("Please enter field properly");
       }
-    }
+    } 
   };
 
   return (
@@ -158,57 +157,8 @@ const Signup = () => {
         </button>
       </div>
     </>
-    /* <div className="signup">
-    <h2>{islogin ? "Login" : "Sign Up"}</h2>
-    <form onSubmit={submitHandler}>
-      <div className="inputitems">
-        <input
-          className="input"
-          type="email "
-          placeholder="Email"
-          id="email"
-          ref={inputEmailRef}
-        />
-      </div>
-      <div className="inputitems">
-        <input
-          className="input"
-          type="password"
-          placeholder="Password"
-          id="password"
-          ref={inputPasswordRef}
-        />
-      </div>
-      <div className="inputitems">
-        <input
-          className="input"
-          type="confirm-password"
-          placeholder="Confirm Password"
-          id="confirm-password"
-          ref={confirmPasswordRef}
-        />
-      </div>
-      <div>
-        {!isloading && (
-          <button className="btn">
-           {islogin ? "Login" : "Create Account"}
-          </button>
-        )}
-        {isloading && <p>Loading..</p>}
-      </div>
-    </form>
-    </div>
-    <div className="msgbox">
-    <button onClick={SwitchAuthModeHandler}>
-      {islogin ? "Don't Have an Account ? Signup" : " Have an Account? Login"}
-    </button>
-    </div>
-    </>
-    );
-    }; */
+   
   );
 };
 
 export default Signup;
-//https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI
-// "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI";

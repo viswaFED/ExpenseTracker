@@ -7,3 +7,13 @@
     font-size: 5rem;
   }
   
+  .verifybtn{
+    color: white;
+    background-color: #008080;
+    border-radius: 5px;
+    border:none;
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    font-size: medium;
+  }

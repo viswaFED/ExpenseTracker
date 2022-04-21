@@ -1,7 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
+import { useHistory } from "react-router-dom";
+
 const Header = () => {
+  const history = useHistory();
+
+  const logoutHandler = (event) => {
+    event.preventDefault();
+    localStorage.setItem("Token", "");
+    localStorage.setItem("userID", "");
+    localStorage.setItem("Email", "");
+    history.replace("/login");
+  };
   return (
     <header className={classes.header}>
       <NavLink to="/home">
@@ -28,7 +39,7 @@ const Header = () => {
           </li>
 
           <li>
-            <button>Logout</button>
+            <button onClick={logoutHandler}>Logout</button>
           </li>
         </ul>
       </nav>

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
@@ -144,7 +144,7 @@ const Signup = () => {
               {isLogin ? "Login" : "SignUp"}
             </button>
             {isLogin && (
-              <label className="forgotpassword"> Forgot password</label>
+              <label className="forgotpassword" > <Link to='/forgotpassword'>Forgot password</Link></label>
             )}
           </div>
         </form>

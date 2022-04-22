@@ -7,6 +7,7 @@ import Layout from "./Components/NavBar/Layout";
 import HomePage from "./Pages/HomePage";
 import Profile from "./Pages/ProfilePage";
 import Expense from "./Pages/ExpensePage";
+import Forgot from "./Pages/ForgotPasswordPage";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
+        <Route path="/forgotpassword">
+          <Forgot />
+        </Route>
+        
         <Route path="*">
           <Redirect to="/" />
         </Route>

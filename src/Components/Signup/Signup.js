@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useContext,  useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import ExpenseContext from "../../Store/Context-Provider";
 import "./Signup.css";
 
 const Signup = () => {
+  const conCtx = useContext(ExpenseContext);
   const history = useHistory();
+
 
   const inputEmailRef = useRef();
   const inputPasswordRef = useRef();
@@ -47,6 +50,7 @@ const Signup = () => {
             localStorage.setItem("userID", data.localId);
             inputEmailRef.current.value = "";
             inputPasswordRef.current.value = "";
+            conCtx.login(data.idToken, data.email);
             history.replace("/home");
           } else {
             const data = await response.json();

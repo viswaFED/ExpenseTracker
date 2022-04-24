@@ -78,7 +78,8 @@ const StartingPageContent = () => {
         </h4>
       </div>
       <div>
-        <h4> Please Verify Your MailID</h4>
+      {!checkVerified && (
+        <h4> Please Verify Your MailID</h4>)}
         {!checkVerified && (
           <button onClick={verifyHandler} className={classes.verifybtn}>
             Verify Email

@@ -1,19 +1,21 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
+import ExpenseContext from "../../Store/Context-Provider";
 import "./ProfileForm.css";
 
 const ProfileForm = () => {
   const nameInputRef = useRef();
   const photoUrlRef = useRef();
+  const conCtx = useContext(ExpenseContext);
 
   const autogetData = async () => {
-    const token = localStorage.getItem("Token");
+    const token = localStorage.getItem("token");
     try {
       const res = await fetch(
         "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI",
         {
           method: "POST",
           body: JSON.stringify({
-            idToken: token,
+            idToken: conCtx.token,
             returnSecureToken: true,
           }),
           headers: {
@@ -45,7 +47,7 @@ const ProfileForm = () => {
     event.preventDefault();
     const entertedName = nameInputRef.current.value;
     const entertedPhotoUrl = photoUrlRef.current.value;
-    const token = localStorage.getItem("Token");
+    const token = localStorage.getItem("token");
 
     try {
       const res = await fetch(
@@ -53,7 +55,7 @@ const ProfileForm = () => {
         {
           method: "POST",
           body: JSON.stringify({
-            idToken: token,
+            idToken: conCtx.token,
             displayName: entertedName,
             photoUrl: entertedPhotoUrl,
             returnSecureToken: true,

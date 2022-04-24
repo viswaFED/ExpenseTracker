@@ -2,31 +2,35 @@ import React, { useState } from "react";
 
 const ExpenseContext = React.createContext({
   token: "",
+  email: "",
   isLoggedIn: false,
-  login: (token) => {},
+  login: (token, email) => {},
   logout: () => {},
 });
 
 export const ExpenseContextProvider = (props) => {
-  const initialToken = localStorage.getItem("UserId");
+  const initialToken = localStorage.getItem("token");
   const [token, setToken] = useState(initialToken);
-
-  const userIsLoggedin = !!token;
+  const [email, setEmail] = useState("");
+  const userIsLoggedIn = !!token;
 
   const loginHandler = (token, email) => {
     setToken(token);
-    
-    localStorage.setItem("UserId", email);
+    setEmail(email);
+    localStorage.setItem("token", token);
+    localStorage.setItem("Email", email);
   };
-
   const logoutHandler = () => {
     setToken(null);
-    localStorage.removeItem("UserId");
+    setEmail(null);
+    localStorage.removeItem("token");
+    localStorage.removeItem("Email");
   };
 
   const contextValue = {
     token: token,
-    isLoggedIn: userIsLoggedin,
+    email: email,
+    isLoggedIn: userIsLoggedIn,
     login: loginHandler,
     logout: logoutHandler,
   };
@@ -37,5 +41,4 @@ export const ExpenseContextProvider = (props) => {
     </ExpenseContext.Provider>
   );
 };
-
 export default ExpenseContext;

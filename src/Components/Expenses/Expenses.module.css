@@ -1,0 +1,44 @@
+.control {
+  margin: 0 0;
+}
+.control h2 {
+  text-align: center;
+}
+.control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.control input {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.2rem;
+  border-radius: 12px;
+  border: none;
+  background-color: #68d4d4;
+}
+
+.control select {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.2rem;
+  border-radius: 12px;
+  border: none;
+  background-color: #68d4d4;
+}
+
+.control button{
+  color: white;
+  background-color: #008080;
+  border-radius: 5px;
+  border: none;
+  margin-top: 1rem;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  font-size: medium;
+}

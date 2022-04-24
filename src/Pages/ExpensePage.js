@@ -1,10 +1,13 @@
-const Expense = ()=>{
+import ExpenseForm from "../Components/Expenses/ExpensesForm";
+import ExpenseList from "../Components/Expenses/ExpensesList";
 
-    return(
-        <div>
-            <h1>Hellow 1Expense</h1>
-        </div>
-    )
-}
+const Expense = () => {
+  return (
+    <div>
+      <ExpenseForm />
+      <ExpenseList />
+    </div>
+  );
+};
 
 export default Expense;

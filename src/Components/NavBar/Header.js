@@ -15,7 +15,7 @@ const Header = () => {
     localStorage.setItem("Token", "");
     localStorage.setItem("userID", "");
     localStorage.setItem("Email", "");
-    conCtx.login(false);
+    conCtx.logout()
     history.replace("/login");
   };
   return (

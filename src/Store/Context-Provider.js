@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ExpenseContext = React.createContext({
   token: "",
   email: "",
-  isLoggedIn: false,
+  isLoggedIn: true,
   login: (token, email) => {},
   logout: () => {},
 });

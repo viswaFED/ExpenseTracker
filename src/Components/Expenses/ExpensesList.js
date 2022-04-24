@@ -2,6 +2,7 @@ import React from "react";
 import "./ExpensesList.css";
 
 const ExpenseList = (props) => {
+  
   let expenseTotal = 0;
   props.items.forEach((item) => {
     let subtotal = 0;

@@ -26,7 +26,8 @@ const ExpenseList = (props) => {
               <span className="left"> {item.money}</span>
               <span className="center">{item.description}</span>
               <span className="right">{item.category}</span>
-            </ul>
+              
+            </ul> 
           );
         })}
       </div>

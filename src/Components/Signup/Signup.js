@@ -30,7 +30,7 @@ const Signup = () => {
       ) {
         try {
           const response = await fetch(
-            "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI",
+            "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDr1f9eNHanBEMWnHIbgvnptZhmiFPV3RU",
             {
               method: "POST",
               body: JSON.stringify({
@@ -70,7 +70,7 @@ const Signup = () => {
       ) {
         try {
           const response = await fetch(
-            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI",
+            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDr1f9eNHanBEMWnHIbgvnptZhmiFPV3RU",
             {
               method: "POST",
               body: JSON.stringify({

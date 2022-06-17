@@ -23,7 +23,8 @@ const ExpenseForm = (props) => {
     const userId = localStorage.getItem("userID");
     try {
       const res = await axios.get(
-        `https://expensetracker-39d53-default-rtdb.firebaseio.com/expenses/${userId}.json`
+        `https://expensetracker-147c4-default-rtdb.firebaseio.com/
+        /expenses/${userId}.json`
       );
       const data = res.data;
       let arr = [];
@@ -39,7 +40,7 @@ const ExpenseForm = (props) => {
   };
   useEffect(() => {
     autoreloadExpenses();
-  }, );
+  }, []);
 
   const addListHandler = async (event) => {
     event.preventDefault();
@@ -63,11 +64,13 @@ const ExpenseForm = (props) => {
       money: enteredMoney,
       description: enteredDescription,
       category: enteredCategory,
+      
     };
     const userId = localStorage.getItem("userID");
     try {
       const res = axios.post(
-        `https://expensetracker-39d53-default-rtdb.firebaseio.com//expenses/${userId}.json`,
+        `https://expensetracker-147c4-default-rtdb.firebaseio.com/
+        expenses/${userId}.json`,
         newExpense
       );
       console.log(res);

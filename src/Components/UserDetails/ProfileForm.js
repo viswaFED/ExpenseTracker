@@ -11,7 +11,7 @@ const ProfileForm = () => {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI",
+        "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDr1f9eNHanBEMWnHIbgvnptZhmiFPV3RU",
         {
           method: "POST",
           body: JSON.stringify({
@@ -41,7 +41,7 @@ const ProfileForm = () => {
 
   useEffect(() => {
     autogetData();
-  }, []);
+  });
 
   const updateHandler = async (event) => {
     event.preventDefault();
@@ -51,7 +51,7 @@ const ProfileForm = () => {
 
     try {
       const res = await fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyA_u3j-_CtI_i8U5vWkP9qADXUZaJIU1AI",
+        "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDr1f9eNHanBEMWnHIbgvnptZhmiFPV3RU",
         {
           method: "POST",
           body: JSON.stringify({

@@ -1,39 +1,35 @@
 .headings {
   background-color: #008080;
   margin-top: 0.1rem;
-  border-radius: 5px;
+  border-radius: 0px;
   border: none;
-  height: 2rem;
+  height: 1.5rem;
   justify-content: space-between;
 }
 .left {
   font-size: medium;
   padding-left: 0.5rem;
   float: left;
-  flex: 30%;
 }
 .center {
   font-size: medium;
   text-align: center;
-  flex: 30%;
 }
 .right {
   font-size: medium;
- float: right;
- padding-right: 0.8rem;
- flex: 30%;
+  float: right;
+  padding-right: 0.8rem;
 }
 
-.addeditems{
-    justify-content: space-between;
+.addeditems {
+  justify-content: space-between;
 }
 
-.addeditems ul{
-    font-size: small;
+.addeditems ul {
+  font-size: small;
 }
 
-.expensetotal{
+.expensetotal {
   text-align: left;
-  margin-left: 1.5rem;
-  
+  margin-right: 2rem;
 }
